@@ -1,22 +1,12 @@
-require 'bundler'
-Bundler.require
+ENV['SINATRA_ENV'] ||= "development"
 
-# get the path of the root of the app
-APP_ROOT = File.expand_path("..", __dir__)
+require 'bundler/setup'
+Bundler.require(:default, ENV['SINATRA_ENV'])
 
-# require the controller(s)
-Dir.glob(File.join(APP_ROOT, 'app', 'controllers', '*.rb')).each { |file| require file }
+ActiveRecord::Base.establish_connection(
+  :adapter => "sqlite3",
+  :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
+)
 
-# require the model(s)
-Dir.glob(File.join(APP_ROOT, 'app', 'models', '*.rb')).each { |file| require file }
-
-# require database configurations
-require File.join(APP_ROOT, 'config', 'database')
-
-# configure FlightAPI settings
-class FlightAPI < Sinatra::Base
-  set :method_override, true
-  set :root, APP_ROOT
-  set :views, File.join(APP_ROOT, "app", "views")
-  set :public_folder, File.join(APP_ROOT, "app", "public")
-end
+require './app/controllers/flight_api_service_controller'
+require_all 'app'
