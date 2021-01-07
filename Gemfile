@@ -7,7 +7,6 @@ gem 'faraday'
 gem 'rack'
 gem 'rake'
 gem 'require_all'
-gem 'sqlite3'
 
 group :development, :test do
   gem 'shotgun'
