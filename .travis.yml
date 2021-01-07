@@ -1,6 +1,7 @@
 language: ruby
-rbenv:
-- 2.5.3
+rvm:
+- 2.2
+- jruby
 cache: bundler
 env:
   global:
