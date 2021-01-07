@@ -6,7 +6,7 @@ def app
 end
 
 describe 'I can connect and recieve a response from the flight API' do
-  it "I get JSON data back", :vcr do
+  it "I get JSON data back" do
     params = {
               :fly_from => 'DEN',
               :date_from => '30/01/2021',
@@ -39,7 +39,7 @@ describe 'I can connect and recieve a response from the flight API' do
   end
 
   describe 'If I send in incorrect parameters,' do
-    it 'I will get an error code for unknown airport', :vcr do
+    it 'I will get an error code for unknown airport' do
       params = {
                 :fly_from => 'ZZZ',
                 :date_from => '30/01/2021',
@@ -61,7 +61,7 @@ describe 'I can connect and recieve a response from the flight API' do
       expect(last_response.body).to include("Not recognized location: `ZZZ`")
     end
 
-    it 'I will get an error code for bad date', :vcr do
+    it 'I will get an error code for bad date' do
       params = {
                 :fly_from => 'DEN',
                 :date_from => '35/01/2021',
