@@ -5,7 +5,8 @@ class FlightApiServiceController < Sinatra::Base
 
   get '/flights' do
     response = FlightService.flights_search(params)
-    response.body
+    status response.status
+    body response.body
   end
 
 end

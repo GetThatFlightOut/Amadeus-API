@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.skypicker.com/flights?apikey&curr=USD&date_from=35/01/2021&date_to=30/01/2021&flight_type=round&fly_from=DEN&limit=20&nights_in_dst_from=5&nights_in_dst_to=5&one_for_city=1&partner=picky&partner_market=us&ret_from_diff_airport=0&sort=price
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 07 Jan 2021 03:37:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '127'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d1eb81910a1ff2196cc83ab0d04b6275a1609990625; expires=Sat, 06-Feb-21
+        03:37:05 GMT; path=/; domain=.skypicker.com; HttpOnly; SameSite=Lax; Secure
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Via:
+      - 1.1 google
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 077c8472330000c7d5de306000000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 60daa3638e03c7d5-DEN
+    body:
+      encoding: UTF-8
+      string: '{"message":[{"param":"_fly_from_date","errors":["Could not parse 35\/01\/2021.
+        Valid formats: %d\/%m\/%Y, %d\/%m\/%Y %H:%M"]}]}'
+  recorded_at: Thu, 07 Jan 2021 03:37:05 GMT
+recorded_with: VCR 6.0.0
