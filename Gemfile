@@ -16,11 +16,11 @@ group :development, :test do
   gem 'tux'
   gem 'capybara'
   gem 'rack-test'
-  gem 'simplecov'
   gem 'travis'
 end
 
 group :test do
+  gem 'simplecov', :require => false
   gem 'pry'
   # gem 'vcr'
   # gem 'webmock'

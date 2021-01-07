@@ -1,7 +1,9 @@
+ENV["SINATRA_ENV"] = "test"
+require 'simplecov'
+SimpleCov.start
 # require 'webmock/rspec'
 # require 'vcr'
 # WebMock.disable_net_connect!(allow_localhost: true)
-ENV["SINATRA_ENV"] = "test"
 
 require_relative '../config/environment'
 require 'rack/test'
