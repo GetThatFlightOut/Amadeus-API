@@ -19,7 +19,7 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Date:
-      - Thu, 07 Jan 2021 03:37:05 GMT
+      - Thu, 07 Jan 2021 05:22:59 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -27,8 +27,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d6038b63a99451d288cd34f493a32515f1609990625; expires=Sat, 06-Feb-21
-        03:37:05 GMT; path=/; domain=.skypicker.com; HttpOnly; SameSite=Lax; Secure
+      - __cfduid=d1e4b6098c1b6865870d247fcbcc6bddc1609996979; expires=Sat, 06-Feb-21
+        05:22:59 GMT; path=/; domain=.skypicker.com; HttpOnly; SameSite=Lax; Secure
       Strict-Transport-Security:
       - max-age=31536000; preload
       X-Content-Type-Options:
@@ -42,16 +42,16 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Cf-Request-Id:
-      - 077c8471160000270b2b2a6000000001
+      - 077ce564bf0000c7b1861cc000000001
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Cf-Ray:
-      - 60daa361b856270b-DEN
+      - 60db3e813901c7b1-DEN
     body:
       encoding: UTF-8
       string: '{"message":[{"param":"fly_from","errors":["Not recognized location:
         `ZZZ`"]}]}'
-  recorded_at: Thu, 07 Jan 2021 03:37:05 GMT
+  recorded_at: Thu, 07 Jan 2021 05:22:59 GMT
 recorded_with: VCR 6.0.0

@@ -23,8 +23,9 @@ end
 Capybara.app = app
 
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/services/vcr_cassettes"
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
   config.configure_rspec_metadata!
   config.filter_sensitive_data('Not an API Key') {ENV['FLIGHT_API_KEY']} #replacement then originial
+  config.default_cassette_options = { re_record_interval: 3600 }
 end
