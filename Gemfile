@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'sinatra', require: 'sinatra/base'
 gem 'pg'
-gem 'activerecord'
-gem 'sinatra-activerecord'
 gem 'figaro', git: 'https://github.com/bpaquet/figaro.git', branch: 'sinatra'
 gem 'faraday'
 gem 'rack'
@@ -17,9 +15,9 @@ group :development, :test do
   gem 'rspec-core'
   gem 'tux'
   gem 'capybara'
-  gem 'launchy'
   gem 'rack-test'
   gem 'simplecov'
+  gem 'travis'
 end
 
 group :test do
