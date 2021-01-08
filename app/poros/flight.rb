@@ -13,9 +13,11 @@ class Flight
               :r_departure_datetime,
               :r_arrival_datetime,
               :booking_link,
-              :trip_duration
-              
+              :trip_duration,
+              :id
+
   def initialize(flight_data)
+    @id = flight_data[:route][0][:flight_no]
     @origin_city = flight_data[:cityFrom]
     @destination_city = flight_data[:cityTo]
     @origin_iata = flight_data[:flyFrom]
