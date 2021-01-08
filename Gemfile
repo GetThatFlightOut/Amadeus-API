@@ -7,6 +7,7 @@ gem 'faraday'
 gem 'rack'
 gem 'rake'
 gem 'require_all'
+gem 'fast_jsonapi'
 
 group :development, :test do
   gem 'shotgun'

@@ -36,6 +36,8 @@ GEM
     faraday-net_http (1.0.0)
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     gh (0.18.0)
       activesupport (~> 5.0)
       addressable (~> 2.4)
@@ -144,6 +146,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   faraday
+  fast_jsonapi
   figaro!
   pg
   pry
