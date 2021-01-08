@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'json'
+require 'rspec'
 
 def app
   FlightApiServiceController
@@ -30,12 +31,12 @@ describe 'I can connect and recieve a response from the flight API' do
     expect(response[:data]).to be_an(Array)
     expect(response[:data][0]).to be_an(Hash)
     expect(response[:data].size).to eq(20)
-    expect(response[:data][0][:price]).to be_an(Integer)
-    expect(response[:data][0][:deep_link]).to_not eq('')
-    expect(response[:data][0][:cityTo]).to be_an(String)
-    expect(response[:data][0][:route][0][:latTo]).to be_an(Float)
-    expect(response[:data][0][:route][0][:lngTo]).to be_an(Float)
-    expect(response[:data][0][:cityFrom]).to eq('Denver')
+    expect(response[:data][0][:attributes][:price]).to be_an(Integer)
+    expect(response[:data][0][:attributes][:deep_link]).to_not eq('')
+    expect(response[:data][0][:attributes][:destination_city]).to be_an(String)
+    expect(response[:data][0][:attributes][:latitude]).to be_an(Float)
+    expect(response[:data][0][:attributes][:longitude]).to be_an(Float)
+    expect(response[:data][0][:attributes][:origin_city]).to eq('Denver')
   end
 
   describe 'If I send in incorrect parameters,' do
