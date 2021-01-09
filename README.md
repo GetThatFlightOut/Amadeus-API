@@ -53,11 +53,17 @@ The Flight API adheres to the standard JSON structure outlined on [jsonapi](#jso
 ```
 
 The `GET /flights` endpoint requires several parameters for a successful response. The required parameters are:
+
   `:fly_from` - (string) - the IATA code of the origin airport
+  
   `:date_from` - (string) - %d%m%y - the earliest date considered for departing flight
+  
   `:date_to` - (string) - %d%m%y - the latest date considered for departing flight
+  
   `:nights_in_dst_from` - (integer) - the minimum length of stay considered for the round trip
+  
   `:nights_in_dst_to` - (integer) - the maximum length of stay considered for the round trip
+  
   `:limit` - (integer) - the maximum number of results to be returned
 
   
