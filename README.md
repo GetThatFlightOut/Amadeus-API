@@ -17,9 +17,9 @@ This project is part of a Service-Oriented Architecture (SOA) application. The F
 ## How to Install Flight-API
 ## API Contract
 
-The weather API adheres to the standard JSON structure outlined on [jsonapi](#jsonapi.org).
+The Flight API adheres to the standard JSON structure outlined on [jsonapi](#jsonapi.org).
 
-- An example of a successful response body is as follows:
+- `GET /flights`: An example of a successful response body is as follows:
 ```
 {:data=>
   [{:id=>"777",
@@ -45,11 +45,31 @@ The weather API adheres to the standard JSON structure outlined on [jsonapi](#js
       :trip_duration=>5,
       :id=>777}}]}
 ```
-- An example of an unsuccessful response body is:
+- `GET /flights`: An example of an unsuccessful response body is:
 ```
 {:message=>
   [{:param=>"fly_from",
     :errors=>["Not recognized location: `ZZZ`"]}]}
+```
+
+The `GET /flights` endpoint requires several parameters for a successful response. The required parameters are:
+  `:fly_from` - (string) - the IATA code of the origin airport
+  `:date_from` - (string) - %d%m%y - the earliest date considered for departing flight
+  `:date_to` - (string) - %d%m%y - the latest date considered for departing flight
+  `:nights_in_dst_from` - (integer) - the minimum length of stay considered for the round trip
+  `:nights_in_dst_to` - (integer) - the maximum length of stay considered for the round trip
+  `:limit` - (integer) - the maximum number of results to be returned
+
+  
+- An example of valid required parameters is:
+```
+{:fly_from => 'DEN',
+ :date_from => '30/01/2021',
+ :date_to => '30/01/2021',
+ :nights_in_dst_from => 5,
+ :nights_in_dst_to => 5,
+ :limit => 20
+ }
 ```
 ## Dependencies
 ## Testing
