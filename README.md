@@ -2,7 +2,7 @@
 
 ## Table of Contents
   - [What it does](#what-it-does)
-  - [How to Install Weather-API](#how-to-install-weather-api)
+  - [How to Install Flight-API](#how-to-install-flight-api)
   - [Dependencies](#dependencies)
   - [Testing](#testing)
   - [Learning Goals](#learning-goals)
@@ -14,7 +14,7 @@
 
 This project is part of a Service-Oriented Architecture (SOA) application. The Flight-API serves as an intermediary, or microservice, from the Kiwi API and the GTFO-BE repo.
 
-## How to Install Weather-API
+## How to Install Flight-API
 ## Dependencies
 ## Testing
 
