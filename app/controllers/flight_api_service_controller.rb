@@ -1,6 +1,7 @@
 require './config/environment'
-require './app/service/connection'
+require './app/services/flight_service'
 require './app/serializers/flight_serializer'
+require 'sinatra/base'
 
 class FlightApiServiceController < Sinatra::Base
 
