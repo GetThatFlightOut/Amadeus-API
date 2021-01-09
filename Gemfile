@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'sinatra', require: 'sinatra/base'
-gem 'pg'
 gem 'figaro', git: 'https://github.com/bpaquet/figaro.git', branch: 'sinatra'
 gem 'faraday'
 gem 'rack'
 gem 'rake'
 gem 'require_all'
+gem 'fast_jsonapi'
 
 group :development, :test do
   gem 'shotgun'
@@ -23,5 +23,4 @@ group :test do
   gem 'pry'
   # gem 'vcr'
   # gem 'webmock'
-  gem 'rack-test'
 end
