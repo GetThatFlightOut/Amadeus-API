@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'sinatra', require: 'sinatra/base'
-gem 'pg'
 gem 'figaro', git: 'https://github.com/bpaquet/figaro.git', branch: 'sinatra'
 gem 'faraday'
 gem 'rack'
