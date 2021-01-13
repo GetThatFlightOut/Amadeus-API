@@ -92,9 +92,12 @@ The `GET /flights` endpoint requires several parameters for a successful respons
 - To explore documentation if you're interested in incorporating other endpoints, please reference the [Kiwi API docs](https://docs.kiwi.com/).
 
 ## Dependencies
+
+* This microservice uses the [`fast_jsonapi`](https://github.com/Netflix/fast_jsonapi) gem, which is no longer being maintained.
+
 ## Testing
 
-* For testing our team implemented Travis CI with RSpec
+* For testing our team implemented [Travis CI](https://travis-ci.com/) with [RSpec](https://rspec.info/)
 
 > Travis CI is cloud based and when we submit a pull request, Travis will attempt to build our project and run the tests to ensure everything is working as expected.
 
