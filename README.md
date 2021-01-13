@@ -13,7 +13,11 @@
 
 ## What it does
 
-This project is part of a Service-Oriented Architecture (SOA) application. The Flight-API serves as an intermediary, or microservice, from the Kiwi API and the GTFO-BE repo.
+This project is part of a Service-Oriented Architecture (SOA) application that provides users with flight and weather information based on search parameters that the user provides. The Flight-API serves as an intermediary, or microservice, from the Kiwi API and the GTFO-BE repo. It retrieves data from the Kiwi API and packages it with only the information needed for the BE application, which in turn combines the data from both the Weather and Flight APIs to send a combincation of data from the two in one package for the front end.
+
+To view the production site, please visit the [GTFO link](https://gtfo-fe.herokuapp.com/).
+
+To view the other components of the application please visit the [Github Project Organization](https://github.com/GetThatFlightOut).
 
 ## How to Install Flight-API
 
@@ -102,6 +106,8 @@ The `GET /flights` endpoint requires several parameters for a successful respons
 > Travis CI is cloud based and when we submit a pull request, Travis will attempt to build our project and run the tests to ensure everything is working as expected.
 
 > RSpec is a tool for unit testing that will ensure we have the intended functionality at each level of our code.
+
+* In order to run the tests, run `bundle exec rspec` in the command line and you should have all passing tests.
 
 ## Learning Goals
 
