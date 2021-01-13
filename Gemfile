@@ -21,6 +21,4 @@ end
 group :test do
   gem 'simplecov', :require => false
   gem 'pry'
-  # gem 'vcr'
-  # gem 'webmock'
 end
