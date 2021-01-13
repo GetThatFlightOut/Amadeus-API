@@ -4,6 +4,7 @@
 ## Table of Contents
   - [What it does](#what-it-does)
   - [How to Install Flight-API](#how-to-install-flight-api)
+  - [API Contract](#api-contract)
   - [Dependencies](#dependencies)
   - [Testing](#testing)
   - [Learning Goals](#learning-goals)
@@ -92,6 +93,9 @@ The `GET /flights` endpoint requires several parameters for a successful respons
 ```
 
   * The parameters above would create the following url if you're using the 9393 port: http://localhost:9393/flights?fly_from=DEN&date_from=30/01/2021&date_to=30/01/2021&nights_in_dst_from=5&nights_in_dst_to=5&limit=20
+
+* View of an API call in [Postman](https://www.postman.com/):
+![flights call](https://user-images.githubusercontent.com/7945439/104520159-e25c2d80-55b7-11eb-9da3-69707d9dccaa.png)
 
 - To explore documentation if you're interested in incorporating other endpoints, please reference the [Kiwi API docs](https://docs.kiwi.com/).
 
