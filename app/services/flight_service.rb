@@ -3,7 +3,6 @@ require './app/controllers/flight_api_service_controller'
 class FlightService
   def self.conn
     Faraday.new(url: 'https://api.skypicker.com') do |req|
-      req.params[:apikey] = ENV['FLIGHT_API_KEY']
       req.params[:max_stopovers] = 0
       req.params[:flight_type] = 'round'
       req.params[:one_for_city] = 1
