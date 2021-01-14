@@ -33,7 +33,7 @@ shotgun
 
 The Flight API adheres to the standard JSON structure outlined on [jsonapi](#jsonapi.org).
 
-- `GET /flights`: An example of a successful response body is as follows:
+- `GET /api/v1/flights`: An example of a successful response body is as follows:
 ```
 {:data=>
   [{:id=>"777",
@@ -59,14 +59,14 @@ The Flight API adheres to the standard JSON structure outlined on [jsonapi](#jso
       :trip_duration=>5,
       :id=>777}}]}
 ```
-- `GET /flights`: An example of an unsuccessful response body is:
+- `GET /api/v1/flights`: An example of an unsuccessful response body is:
 ```
 {:message=>
   [{:param=>"fly_from",
     :errors=>["Not recognized location: `ZZZ`"]}]}
 ```
 
-The `GET /flights` endpoint requires several parameters for a successful response. The required parameters are:
+The `GET /api/v1/flights` endpoint requires several parameters for a successful response. The required parameters are:
 
   `:fly_from` - (string) - the IATA code of the origin airport
 
@@ -92,7 +92,7 @@ The `GET /flights` endpoint requires several parameters for a successful respons
  }
 ```
 
-  * The parameters above would create the following url if you're using the 9393 port: http://localhost:9393/flights?fly_from=DEN&date_from=30/01/2021&date_to=30/01/2021&nights_in_dst_from=5&nights_in_dst_to=5&limit=20
+  * The parameters above would create the following url if you're using the 9393 port: http://localhost:9393/api/v1/flights?fly_from=DEN&date_from=30/01/2021&date_to=30/01/2021&nights_in_dst_from=5&nights_in_dst_to=5&limit=20
 
 * View of an API call in [Postman](https://www.postman.com/):
 ![flights call](https://user-images.githubusercontent.com/7945439/104520159-e25c2d80-55b7-11eb-9da3-69707d9dccaa.png)
