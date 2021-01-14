@@ -1,12 +1,3 @@
-![](https://img.shields.io/badge/Rails-5.2.4-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) 
-![](https://img.shields.io/badge/Ruby-2.5.3-orange) 
-![](https://img.shields.io/badge/Code-HTML-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) 
-![](https://img.shields.io/gem/v/sinatra)
-![](https://img.shields.io/gem/v/fast_jsonapi)
-![](https://img.shields.io/travis/com/GetThatFlightOut/Flight-API)
-![](https://img.shields.io/badge/GetThatFlightOut-Flight--API-yellow)
-![](https://github.com/GetThatFlightOut/GTFO-FE/stargazers)
-
 # Flight-API
 ![image](https://user-images.githubusercontent.com/68172332/104384272-6d70f100-54ee-11eb-94ba-287258e83de7.png)
 
@@ -41,12 +32,48 @@ To view the other components of the application please visit the [Github Project
 git clone git@github.com:GetThatFlightOut/Flight-API.git
 cd Flight-API
 bundle install
+figaro install
+  #setup ENV variables in application.yml:
+  #FLIGHT_API_KEY: YOUR_API_KEY_FROM_KIWI
 shotgun
 ```
 
 ## API Contract
 
 The Flight API adheres to the standard JSON structure outlined on [jsonapi](#jsonapi.org).
+
+- `GET /api/v1/flights`: An example of a successful response body is as follows:
+```
+{:data=>
+  [{:id=>"777",
+    :type=>"flight",
+    :attributes=>
+     {:origin_city=>"Denver",
+      :destination_city=>"Las Vegas",
+      :origin_iata=>"DEN",
+      :destination_iata=>"LAS",
+      :latitude=>36.08,
+      :longitude=>-115.15222,
+      :price=>48,
+      :departure_datetime=>
+       "2021-01-30T16:18:00.000+00:00",
+      :arrival_datetime=>
+       "2021-01-30T17:19:00.000+00:00",
+      :r_departure_datetime=>
+       "2021-02-04T16:45:00.000+00:00",
+      :r_arrival_datetime=>
+       "2021-02-04T19:44:00.000+00:00",
+      :booking_link=>
+       "https://www.kiwi.com/deep?from=DEN&to=LAS&flightsId=0713244648e10000956fd20d_0%7C2446071348e60000bdad426d_0&price=40&passengers=1&affilid=picky&lang=en&currency=USD&booking_token=Bl1eEOekQmiUSdJPDhd8KsZsKxLkK2NMij2qwscBpXxiy-8M0wqdN84gJ22N7Vzz0XZ-VIuywxmaDjRSKDhXWuc0tH2KD-6hnWy5Ziwy_fQ2w-kf4X4AWTkJ0o_LUBr2CqwxKM6ktkn1c9sbKaQ43fXYfkcIaVtDlTxSpUJfeTato9hJNaFrCXFXs-GMbvPeKF-ksA15anp764WKIM54oedHG2ulK_OOcVmyl7ubD8C0s9m5E2IDaAdASAbpllQMXxpu2hKpJudVjCzErDR1hrh0g1fxZ2u3DyfJdJLQq0xuQ68OJj7xxPRXJ2ofAOOTFrRVUkQ7p09BdKNju138PifLQC2YknsSUQQPZuDFSinrqpJVkO8YVapsrDfZ1CxFPM_JhfXT27X16jNvRCjrckvwEKbPT9DRYgb0h4__WwnjcCxAqY3aaOhS-9H_gRFd49qiAknz13F40lWUIoZwQeoCRj7WCTbFT25rYTGZNLU8yvqkoDkeR2pzuBpto7PEGKqcBEDEuMHzt-B6OXSPVbphu1HLsJnrJguFL2Bq_PZV-ugdNsxIpe-v-DyiS0jubCvMQEeUac4_4_Ku6qa8Rj7HHex0NESs3Edrq_BuaYJIFPqVkx12_BTy_vdn6fvmnR-un5ecjkSCT4v12hd5h3WeObPc6jUA_9LcHQaHoSh8=",
+      :trip_duration=>5,
+      :id=>777}}]}
+```
+- `GET /api/v1/flights`: An example of an unsuccessful response body is:
+```
+{:message=>
+  [{:param=>"fly_from",
+    :errors=>["Not recognized location: `ZZZ`"]}]}
+```
 
 The `GET /api/v1/flights` endpoint requires several parameters for a successful response. The required parameters are:
 
@@ -78,13 +105,6 @@ The `GET /api/v1/flights` endpoint requires several parameters for a successful 
 
 * View of an API call in [Postman](https://www.postman.com/):
 ![flights call](https://user-images.githubusercontent.com/7945439/104520159-e25c2d80-55b7-11eb-9da3-69707d9dccaa.png)
-
-- `GET /api/v1/flights`: An example of an unsuccessful response body is:
-```
-{:message=>
-  [{:param=>"fly_from",
-    :errors=>["Not recognized location: `ZZZ`"]}]}
-```
 
 - To explore documentation if you're interested in incorporating other endpoints, please reference the [Kiwi API docs](https://docs.kiwi.com/).
 
@@ -124,28 +144,26 @@ The `GET /api/v1/flights` endpoint requires several parameters for a successful 
 
 ## Contact
 
-#### Todd Estes: [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/toddwestes/), [Email](mailto:elestes@gmail.com), [GitHub](https://github.com/Todd-Estes)
- 
-#### Connor Ferguson: [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/connor-p-ferguson/), [Email](mailto:cpfergus1@gmail.com), [GitHub](https://github.com/cpfergus1)
- 
-#### George Soderholm: [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/george-soderholm-05776947/), [Email](mailto:georgesoderholm@gmail.com), [GitHub](https://github.com/GeorgieGirl24)
-    
-#### Sage Freeman-Gonzales: [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/sagefreemangonzales/), [Email](mailto:sagegonzales15@gmail.com), [GitHub](https://github.com/SageOfCode)
- 
-#### Sheryl Stillman: [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/sherylstillman1/), [Email](mailto:sheryl.stillman@gmail.com), [GitHub](https://github.com/stillsheryl)
-    
-#### Aidan Murray:  [![LinkedIn][linkedin-shield]](http://www.linkedin.com/in/aidan-murray-teknoserval), [Email](mailto:aidanhansm@gmail.com), [GitHub](https://github.com/TeknoServal)
-      
-#### Jesse Mellinger: [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/jesse-mellinger/), [Email](mailto:jesse.m.mellinger@gmail.com), [GitHub](https://github.com/JesseMellinger)
-        
-#### Nick King: [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/nick-king-3128501ba/), [Email](mailto:nickmaxking@gmail.com), [GitHub](https://github.com/nmking22)
- 
-#### Brian Liu: [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/brian-liu-8356287b/), [Email](mailto:brian.b.liu@gmail.com), [GitHub](https://github.com/badgerbreezy)
-    
-#### Will Dunlap: [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/willwdunlap/), [Email](mailto:dunlapww@gmail.com), [GitHub](https://github.com/dunlapww)
-   
+#### Todd Estes: [LinkedIn](https://www.linkedin.com/in/toddwestes/), [Email](mailto:elestes@gmail.com), [GitHub](https://github.com/Todd-Estes)
+
+#### Connor Ferguson: [LinkedIn](https://www.linkedin.com/in/connor-p-ferguson/), [Email](mailto:cpfergus1@gmail.com), [GitHub](https://github.com/cpfergus1)
+
+#### George Soderholm: [LinkedIn](https://www.linkedin.com/in/george-soderholm-05776947/), [Email](mailto:georgesoderholm@gmail.com), [GitHub](https://github.com/GeorgieGirl24)
+
+#### Sage Freeman-Gonzales: [LinkedIn](https://www.linkedin.com/in/sagefreemangonzales/), [Email](mailto:sagegonzales15@gmail.com), [GitHub](https://github.com/SageOfCode)
+
+#### Sheryl Stillman: [LinkedIn](https://www.linkedin.com/in/sherylstillman1/), [Email](mailto:sheryl.stillman@gmail.com), [GitHub](https://github.com/stillsheryl)
+
+#### Aidan Murray:  [LinkedIn](http://www.linkedin.com/in/aidan-murray-teknoserval), [Email](mailto:aidanhansm@gmail.com), [GitHub](https://github.com/TeknoServal)
+
+#### Jesse Mellinger: [LinkedIn](https://www.linkedin.com/in/jesse-mellinger/), [Email](mailto:jesse.m.mellinger@gmail.com), [GitHub](https://github.com/JesseMellinger)
+
+#### Nick King: [LinkedIn](https://www.linkedin.com/in/nick-king-3128501ba/), [Email](mailto:nickmaxking@gmail.com), [GitHub](https://github.com/nmking22)
+
+#### Brian Liu: [LinkedIn](https://www.linkedin.com/in/brian-liu-8356287b/), [Email](mailto:brian.b.liu@gmail.com), [GitHub](https://github.com/badgerbreezy)
+
+#### Will Dunlap: [LinkedIn](https://www.linkedin.com/in/willwdunlap/), [Email](mailto:dunlapww@gmail.com), [GitHub](https://github.com/dunlapww)
+
+
+
 ## Acknowledgments
-
-<!-- MARKDOWN LINKS -->
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-
