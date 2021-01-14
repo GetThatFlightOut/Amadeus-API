@@ -5,7 +5,7 @@ require 'sinatra/base'
 
 class FlightApiServiceController < Sinatra::Base
 
-  get '/flights' do
+  get '/api/v1/flights' do
     response = FlightService.flights_search(params)
     json = JSON.parse(response.body, symbolize_names: true)
     if response.status == 200

@@ -17,7 +17,7 @@ describe 'I can connect and recieve a response from the flight API' do
       :limit => 20
       }
 
-    get '/flights', params
+    get '/api/v1/flights', params
     expect(last_response.status).to eq(200)
     expect(last_response.body).to be_a(String)
     response = JSON.parse(last_response.body, symbolize_names: true)
@@ -43,7 +43,7 @@ describe 'I can connect and recieve a response from the flight API' do
                 :nights_in_dst_to => 5,
                 :limit => 20
                 }
-      get '/flights', params
+      get '/api/v1/flights', params
 
       expect(last_response.status).to eq(422)
       expect(last_response.body).to include("Not recognized location: `ZZZ`")
@@ -58,7 +58,7 @@ describe 'I can connect and recieve a response from the flight API' do
                 :nights_in_dst_to => 5,
                 :limit => 20
                 }
-      get '/flights', params
+      get '/api/v1/flights', params
 
       expect(last_response.status).to eq(400)
       expect(last_response.body).to include("Could not parse")
@@ -74,7 +74,7 @@ describe 'I can connect and recieve a response from the flight API' do
         :limit => 20
         }
 
-      get '/flights', params
+      get '/api/v1/flights', params
 
       response = JSON.parse(last_response.body, symbolize_names: true)
 
