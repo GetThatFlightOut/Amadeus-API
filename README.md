@@ -25,7 +25,7 @@
 
 ## What it does
 
-This project is part of a Service-Oriented Architecture (SOA) application that provides users with flight and weather information based on search parameters that the user provides. The Flight-API serves as an intermediary, or microservice, from the Kiwi API and the GTFO-BE repo. It retrieves data from the Kiwi API and packages it with only the information needed for the BE application, which in turn combines the data from both the Weather and Flight APIs to send a combincation of data from the two in one package for the front end.
+This project is part of a Service-Oriented Architecture (SOA) application that provides users with flight and weather information based on search parameters that the user provides. The Flight-API serves as an intermediary, or microservice, from the Kiwi API and the GTFO-BE repo. It retrieves data from the Kiwi API and packages it with only the information needed for the BE application, which in turn combines the data from both the Weather and Flight APIs to send a combination of data from the two in one package for the front end.
 
 To view the production site, please visit the [GTFO link](https://gtfo-fe.herokuapp.com/).
 
