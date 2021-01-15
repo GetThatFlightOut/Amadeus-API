@@ -78,9 +78,9 @@ The Flight API adheres to the standard JSON structure outlined on [jsonapi](#jso
 ```
 - `GET /api/v1/flights`: An example of an unsuccessful response body is:
 ```
-{:message=>
-  [{:param=>"fly_from",
-    :errors=>["Not recognized location: `ZZZ`"]}]}
+{"message":
+  [{"param": "fly_from",
+    "errors": ["Not recognized location: `ZZZ`"]}]}
 ```
 
 The `GET /api/v1/flights` endpoint requires several parameters for a successful response. The required parameters are:
