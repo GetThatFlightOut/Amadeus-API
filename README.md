@@ -43,9 +43,6 @@ To view the other components of the application please visit the [Github Project
 git clone git@github.com:GetThatFlightOut/Flight-API.git
 cd Flight-API
 bundle install
-figaro install
-  #setup ENV variables in application.yml:
-  #FLIGHT_API_KEY: YOUR_API_KEY_FROM_KIWI
 shotgun
 ```
 
