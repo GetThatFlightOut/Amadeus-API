@@ -52,29 +52,29 @@ The Flight API adheres to the standard JSON structure outlined on [jsonapi](#jso
 
 - `GET /api/v1/flights`: An example of a successful response body is as follows:
 ```
-{:data=>
-  [{:id=>"777",
-    :type=>"flight",
-    :attributes=>
-     {:origin_city=>"Denver",
-      :destination_city=>"Las Vegas",
-      :origin_iata=>"DEN",
-      :destination_iata=>"LAS",
-      :latitude=>36.08,
-      :longitude=>-115.15222,
-      :price=>48,
-      :departure_datetime=>
+{"data":
+  [{"id": "777",
+    "type": "flight",
+    "attributes":
+     {"origin_city": "Denver",
+      "destination_city": "Las Vegas",
+      "origin_iata": "DEN",
+      "destination_iata": "LAS",
+      "latitude": 36.08,
+      "longitude": -115.15222,
+      "price": 48,
+      "departure_datetime":
        "2021-01-30T16:18:00.000+00:00",
-      :arrival_datetime=>
+      "arrival_datetime":
        "2021-01-30T17:19:00.000+00:00",
-      :r_departure_datetime=>
+      "r_departure_datetime":
        "2021-02-04T16:45:00.000+00:00",
-      :r_arrival_datetime=>
+      "r_arrival_datetime":
        "2021-02-04T19:44:00.000+00:00",
-      :booking_link=>
+      "booking_link":
        "https://www.kiwi.com/deep?from=DEN&to=LAS&flightsId=0713244648e10000956fd20d_0%7C2446071348e60000bdad426d_0&price=40&passengers=1&affilid=picky&lang=en&currency=USD&booking_token=Bl1eEOekQmiUSdJPDhd8KsZsKxLkK2NMij2qwscBpXxiy-8M0wqdN84gJ22N7Vzz0XZ-VIuywxmaDjRSKDhXWuc0tH2KD-6hnWy5Ziwy_fQ2w-kf4X4AWTkJ0o_LUBr2CqwxKM6ktkn1c9sbKaQ43fXYfkcIaVtDlTxSpUJfeTato9hJNaFrCXFXs-GMbvPeKF-ksA15anp764WKIM54oedHG2ulK_OOcVmyl7ubD8C0s9m5E2IDaAdASAbpllQMXxpu2hKpJudVjCzErDR1hrh0g1fxZ2u3DyfJdJLQq0xuQ68OJj7xxPRXJ2ofAOOTFrRVUkQ7p09BdKNju138PifLQC2YknsSUQQPZuDFSinrqpJVkO8YVapsrDfZ1CxFPM_JhfXT27X16jNvRCjrckvwEKbPT9DRYgb0h4__WwnjcCxAqY3aaOhS-9H_gRFd49qiAknz13F40lWUIoZwQeoCRj7WCTbFT25rYTGZNLU8yvqkoDkeR2pzuBpto7PEGKqcBEDEuMHzt-B6OXSPVbphu1HLsJnrJguFL2Bq_PZV-ugdNsxIpe-v-DyiS0jubCvMQEeUac4_4_Ku6qa8Rj7HHex0NESs3Edrq_BuaYJIFPqVkx12_BTy_vdn6fvmnR-un5ecjkSCT4v12hd5h3WeObPc6jUA_9LcHQaHoSh8=",
-      :trip_duration=>5,
-      :id=>777}}]}
+      "trip_duration": 5,
+      "id": 777}}]}
 ```
 - `GET /api/v1/flights`: An example of an unsuccessful response body is:
 ```
